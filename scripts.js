@@ -14,7 +14,7 @@ amount.oninput = () => {
   // Obtém o valor atual do input e remove os caracteres não numéricos
   let value = amount.value.replace(/\D/g, "");
 
-  // Transformar o valor em centatos (exemplo: 150/100 = 1.5 é equivalente a R$ 1,50)
+  // Transformar o valor em centavos (exemplo: 150/100 = 1.5 é equivalente a R$ 1,50)
   value = Number(value) / 100;
 
   // Atualiza o valor do input
@@ -159,3 +159,11 @@ function updateTotals() {
     console.log(error);
   }
 }
+
+// Evento que captura o clique nos itens da lista
+expenseList.addEventListener("click", function (event) {
+  // Verificar se o elemento clicado é o ícone de remover
+  if (event.target.classList.contains("remove-icon")) {
+    console.log(event);
+  }
+});
